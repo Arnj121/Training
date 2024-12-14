@@ -7,19 +7,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 public class Locators {
-
     public static void main(String[] args) throws InterruptedException {
-
-// TODO Auto-generated method stub
-
-//implicit wait - 2 seconds time out
-
 
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         ChromeDriver driver = new ChromeDriver(options);
-        long sec=5;
+        long sec = 5;
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
@@ -63,12 +57,6 @@ public class Locators {
 
         driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();
 
-
-
-
-
     }
-
-
 
 }

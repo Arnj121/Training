@@ -3,9 +3,9 @@
 <suite name="jenkins">
     <test name="Locators">
         <classes>
-            <class name="jenkins.Locators"></class>
-            <class name="jenkins.Locators2"></class>
-            <class name="jenkins.Locators3"></class>
+            <class name="jenkins.Locators"/>
+            <class name="jenkins.Locators2"/>
+            <class name="jenkins.Locators3"/>
         </classes>
     </test>
 </suite> 
