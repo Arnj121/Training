@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="jenkins">
+    <test name="Locators">
+        <classes>
+            <class name="jenkins.Locators"></class>
+            <class name="jenkins.Locators2"></class>
+            <class name="jenkins.Locators3"></class>
+        </classes>
+    </test>
+</suite> 
