@@ -1,5 +1,6 @@
 package jenkins;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -16,6 +17,7 @@ public class Locators {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         ChromeDriver driver = new ChromeDriver(options);
+        WebDriverManager.chromedriver().setup();
         long sec = 5;
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

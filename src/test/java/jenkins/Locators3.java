@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 public class Locators3 {
@@ -12,8 +13,9 @@ public class Locators3 {
     public void start() {
 
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        WebDriver driver = new ChromeDriver(options);
         WebDriverManager.chromedriver().setup();
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 

@@ -1,8 +1,10 @@
 package jenkins;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,14 +15,13 @@ public class Locators2 {
     @Test
     public void start() throws InterruptedException {
 
-// TODO Auto-generated method stub
-
         String name = "rahul";
 
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-
-        WebDriver driver = new ChromeDriver();
-
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        WebDriver driver = new ChromeDriver(options);
+        WebDriverManager.chromedriver().setup();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         String password = getPassword(driver);
@@ -59,13 +60,7 @@ public class Locators2 {
 
         String passwordText =driver.findElement(By.cssSelector("form p")).getText();
 
-//Please use temporary password 'rahulshettyacademy' to Login.
-
         String[] passwordArray = passwordText.split("'");
-
-// String[] passwordArray2 = passwordArray[1].split("'");
-
-// passwordArray2[0]
 
         String password = passwordArray[1].split("'")[0];
 
