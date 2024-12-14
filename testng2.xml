@@ -2,10 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="jenkins">
     <test name="Locators">
-        <classes>
-            <class name="jenkins.Locators"/>
-            <class name="jenkins.Locators2"/>
-            <class name="jenkins.Locators3"/>
-        </classes>
+        <packages>
+            <package name="jenkins"></package>
+        </packages>
     </test>
 </suite> 

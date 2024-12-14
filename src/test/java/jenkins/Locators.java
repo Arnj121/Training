@@ -3,11 +3,14 @@ package jenkins;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class Locators {
-    public static void main(String[] args) throws InterruptedException {
+
+    @Test
+    public void start() throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         ChromeOptions options = new ChromeOptions();

@@ -4,10 +4,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class Locators3 {
 
-    public static void main(String[] args) {
+    @Test
+    public void start() {
 
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
