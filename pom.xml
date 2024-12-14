@@ -7,24 +7,35 @@
     <groupId>org.example</groupId>
     <artifactId>training</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <profiles>
+        <profile>
+            <id>locators</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <includes>
+                                <include>jenkins/*.java</include> <!-- Include tests with 'Test' prefix -->
+                            </includes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.7.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.seleniumhq.selenium</groupId>-->
-        <!--            <artifactId>selenium-java</artifactId>-->
-        <!--            <version>3.141.59</version>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.1.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -36,33 +47,28 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-jvm-deps -->
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-jvm-deps</artifactId>
             <version>1.0.5</version>
             <scope>provided</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>1.2.3</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-core -->
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-core</artifactId>
             <version>1.2.3</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>1.2.3</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/net.sf.opencsv/opencsv -->
         <dependency>
             <groupId>net.sf.opencsv</groupId>
             <artifactId>opencsv</artifactId>
@@ -78,7 +84,6 @@
             <artifactId>selenium-devtools</artifactId>
             <version>4.0.0-alpha-4</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
@@ -96,12 +101,6 @@
             <version>1.2.2</version>
             <scope>test</scope>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.jetbrains</groupId>-->
-        <!--            <artifactId>annotations</artifactId>-->
-        <!--            <version>RELEASE</version>-->
-        <!--            <scope>compile</scope>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
@@ -136,14 +135,10 @@
             <artifactId>extentreports</artifactId>
             <version>4.1.3</version>
         </dependency>
-
     </dependencies>
-
-
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
 </project>
